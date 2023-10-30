@@ -3,23 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_tickets">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.overcome.tickets.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/nav_tickets"
+        android:name="com.overcome.tickets.ui.Tickets"
+        android:label="Tickets Abiertos" />
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.overcome.tickets.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/nav_archivo"
+        android:name="com.overcome.tickets.ui.Archivo"
+        android:label="Tickets Archivados" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.overcome.tickets.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_preguntasfrecuentes"
+        android:name="com.overcome.tickets.ui.PreguntasFrecuentes"
+        android:label="Preguntas Frecuentes" />
+    <fragment
+        android:id="@+id/nav_avisos"
+        android:name="com.overcome.tickets.ui.Avisos"
+        android:label="Avisos y noticias" />
+    <fragment
+        android:id="@+id/nav_cerrarsesion"
+        android:name="com.overcome.tickets.ui.CerrarSesion"
+        android:label="Cerrar Sesión" />
 </navigation>

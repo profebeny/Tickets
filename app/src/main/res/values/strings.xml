@@ -10,4 +10,29 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string-array name="EquipoResponsable">
+        <item>Sin especificar</item>
+        <item>Soporte</item>
+        <item>Desarrollo</item>
+        <item>Atención a clientes</item>
+    </string-array>
+
+    <string-array name="TipoIncidencia">
+        <item>Bug</item>
+        <item>Feature</item>
+    </string-array>
+
+    <string-array name="GravedadIncidencia">
+        <item>High</item>
+        <item>Medium</item>
+        <item>low</item>
+    </string-array>
+
+    <!--=============== SERVICIOS WEB =============== -->
+    <string name="URL_insertTickets">https://controlseg.com.mx/celfinder/ws/RegistrarRadios.php</string>
+    <string name="URL_GetTickets">https://controlseg.com.mx/overcometicket/ws/getTickets.php?Usuario=</string>
+
+
+
 </resources>
