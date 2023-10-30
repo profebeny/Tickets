@@ -190,11 +190,7 @@ public class Tickets extends Fragment {
             } catch (JSONException err) {
                 Log.i(TAG, "jsonadapter Error: "+err.toString());
             }
-
-
             return row;
         }
-
-
     }
 }
