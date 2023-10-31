@@ -62,7 +62,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     /********************* Sweet Alert ********************/
     implementation ("com.github.f0ris.sweetalert:library:1.5.6")
-    /********************* Sweet Alert ********************/
+    /********************* Gson ********************/
     implementation ("com.google.code.gson:gson:2.10.1")
 
 

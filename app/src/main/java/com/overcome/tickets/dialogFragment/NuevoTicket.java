@@ -1,15 +1,19 @@
 package com.overcome.tickets.dialogFragment;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Looper;
+import android.speech.RecognizerIntent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,6 +26,8 @@ import com.overcome.tickets.R;
 import com.overcome.tickets.Utilidades.Funciones;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Locale;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -37,6 +43,9 @@ public class NuevoTicket extends DialogFragment {
     EditText txtNombreResponsable,txtVersionSoftware,txtVDescripcion,txtTitulo;
     Spinner spEquipoResponsable,spTipoIncidencia,spGravedadIncidencia;
     Funciones funciones;
+    ImageView imgMicro;
+    private static final  int REQ_CODE_SPEECH_INPUT=100;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,6 +60,7 @@ public class NuevoTicket extends DialogFragment {
         spEquipoResponsable = view.findViewById(R.id.spEquipoResponsable);
         spTipoIncidencia = view.findViewById(R.id.spTipoIncidencia);
         spGravedadIncidencia = view.findViewById(R.id.spGravedadIncidencia);
+        imgMicro = view.findViewById(R.id.imgMicro);
         funciones = new Funciones();
 
         btnCrearTicket.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +92,46 @@ public class NuevoTicket extends DialogFragment {
             }
         });
 
+        imgMicro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iniciarEntradadeVoz();
+            }
+        });
+
         return view;
+    }
+
+    //Método que inicia el intent para de grabar la voz
+    private void iniciarEntradadeVoz() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"COMIENZA A HABLAR AHORA");
+        try {
+            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+        }
+        catch (Exception e){
+            Toast.makeText(getContext(),e.toString(),Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //Almacena la Respuesta de la lectura de voz y la coloca en el Cuadro de Texto Correspondiente
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode){
+            case REQ_CODE_SPEECH_INPUT:{
+                if (resultCode== RESULT_OK && null != data)
+                {
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    String textoActual = txtVDescripcion.getText().toString();
+                    txtVDescripcion.setText(textoActual+" " + result.get(0));
+                }
+                break;
+            }
+        }
     }
 
     private boolean validarCampos(String Titulo,String NombreResponsable,String Descripcion) {
