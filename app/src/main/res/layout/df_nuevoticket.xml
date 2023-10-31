@@ -25,6 +25,9 @@
             android:drawableLeft="@drawable/add_ticket"
             />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,6 +43,22 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtNombreResponsable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lytitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="*Titulo del Ticket"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -105,17 +124,6 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lyTitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="*Título del ticket"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/lyVersionSoftware"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,8 +160,13 @@
                 android:text="Crear Ticket"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="20dp"
                 android:backgroundTint="#2C2C2C"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"></TextView>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

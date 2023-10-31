@@ -1,4 +1,4 @@
-package com.overcome.tickets.ui;
+package com.overcome.tickets.dialogFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,15 +7,15 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.DialogFragment;
 
 import com.overcome.tickets.R;
 
-public class Avisos extends Fragment {
+public class ResponderTicket extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_avisos, container, false);
+        View view = inflater.inflate(R.layout.df_responderticket,container,false);
 
         return view;
     }

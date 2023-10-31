@@ -7,4 +7,10 @@
         <item name="android:textSize">15dp</item>
 
     </style>
+
+    <style name="detallesTicket">
+        <item name="android:textColor">#000</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">15dp</item>
+    </style>
 </resources>

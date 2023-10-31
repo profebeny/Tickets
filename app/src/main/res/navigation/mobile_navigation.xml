@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/nav_tickets"
-        android:name="com.overcome.tickets.ui.Tickets"
+        android:name="com.overcome.tickets.ui.Fragments.Tickets"
         android:label="Tickets Abiertos" />
     <fragment
         android:id="@+id/nav_archivo"
-        android:name="com.overcome.tickets.ui.Archivo"
+        android:name="com.overcome.tickets.ui.Fragments.Archivo"
         android:label="Tickets Archivados" />
     <fragment
         android:id="@+id/nav_preguntasfrecuentes"
-        android:name="com.overcome.tickets.ui.PreguntasFrecuentes"
+        android:name="com.overcome.tickets.ui.Fragments.PreguntasFrecuentes"
         android:label="Preguntas Frecuentes" />
     <fragment
         android:id="@+id/nav_avisos"
-        android:name="com.overcome.tickets.ui.Avisos"
+        android:name="com.overcome.tickets.ui.Fragments.Avisos"
         android:label="Avisos y noticias" />
     <fragment
         android:id="@+id/nav_cerrarsesion"
-        android:name="com.overcome.tickets.ui.CerrarSesion"
+        android:name="com.overcome.tickets.ui.Fragments.CerrarSesion"
         android:label="Cerrar Sesión" />
 </navigation>

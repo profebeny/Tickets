@@ -1,13 +1,13 @@
-package com.overcome.tickets
+package com.overcome.tickets.ui.Activitys
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.overcome.tickets.MainActivity
+import com.overcome.tickets.R
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

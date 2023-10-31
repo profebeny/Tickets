@@ -1,6 +1,7 @@
-package com.overcome.tickets.ui;
+package com.overcome.tickets.ui.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,19 +9,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.overcome.tickets.MainActivity;
 import com.overcome.tickets.R;
 import com.overcome.tickets.Utilidades.Funciones;
+import com.overcome.tickets.ui.Activitys.TicketDetalles;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +41,7 @@ public class Tickets extends Fragment {
     ListView lvTickets;
     String TAG = "GetTickets";
     ArrayList<String> Tickets = new ArrayList<>();
+    Button btnActualizar;
     Funciones funciones;
 
     @Nullable
@@ -44,23 +49,50 @@ public class Tickets extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tickets, container, false);
         lvTickets = view.findViewById(R.id.lvTickets);
+        btnActualizar = view.findViewById(R.id.btnActualizar);
         funciones = new Funciones();
 
         try {
             //Comprueba si hay Conexión a internet
-            if (funciones.isOnlineNet()) {
+            if (funciones.isNetDisponible(getContext())) {
+                lvTickets.setVisibility(View.VISIBLE);
+                btnActualizar.setVisibility(View.GONE);
+
                 Log.d(TAG, "Estás online");
                 SharedPreferences preferences = getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
                 String Usuario = preferences.getString("Usuario", "");
                 GetTickets(Usuario);
             } else {
+                lvTickets.setVisibility(View.GONE);
+                btnActualizar.setVisibility(View.VISIBLE);
                 Log.d(TAG, "NO Estás online");
                 //funciones.SweetAlertDialogSucces(MainActivity.this,"Verifica tu conexión a Internet");
-                Toast.makeText(getContext(), "Verifica tu conexión", Toast.LENGTH_SHORT);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+            btnActualizar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent1 = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
+        lvTickets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SharedPreferences preferences = getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("ticketSelected",""+Tickets.get(position));
+                editor.commit();
+
+                //funciones.sadSucces(getContext(),"seleccionado"+Tickets.get(position));
+                Intent intent1 = new Intent(getContext(), TicketDetalles.class);
+                startActivity(intent1);
+            }
+        });
 
         return view;
     }
