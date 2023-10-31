@@ -137,20 +137,37 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lyDescripcion"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="*Descripción completa del problemaa"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtVDescripcion"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lyDescripcion"
                     android:layout_width="match_parent"
+                    android:layout_marginRight="60dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:hint="*Descripción completa del problemaa"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtVDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                        android:id="@+id/imgMicro"
+                    android:clickable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_micro"
+                    android:layout_marginLeft="-50dp"
+                    android:layout_gravity="center"
+                    ></ImageView>
+
+            </LinearLayout>
+
 
 
             <Button

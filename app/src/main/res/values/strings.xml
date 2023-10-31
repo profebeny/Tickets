@@ -33,7 +33,7 @@
     <string name="URL_insertTickets">https://controlseg.com.mx/overcometicket/ws/insertTickets.php</string>
     <string name="URL_GetTickets">https://controlseg.com.mx/overcometicket/ws/getTickets.php?Usuario=</string>
     <string name="URL_GetTicketsArchivados">https://controlseg.com.mx/overcometicket/ws/getTicketsArchivados.php?Usuario=</string>
-    <string name="URL_archivarTicket">https://controlseg.com.mx/overcometicket/ws/archivarTicket=</string>
+    <string name="URL_archivarTicket">https://controlseg.com.mx/overcometicket/ws/archivarTicket.php</string>
 
 
 </resources>

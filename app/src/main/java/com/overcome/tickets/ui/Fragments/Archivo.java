@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -23,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import com.overcome.tickets.MainActivity;
 import com.overcome.tickets.R;
 import com.overcome.tickets.Utilidades.Funciones;
+import com.overcome.tickets.ui.Activitys.TicketDetalles;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -74,6 +76,20 @@ public class Archivo extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(getContext(), MainActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        lvTicketsArchivados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SharedPreferences preferences = getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("ticketSelected",""+Tickets.get(position));
+                editor.commit();
+
+                //funciones.sadSucces(getContext(),"seleccionado"+Tickets.get(position));
+                Intent intent1 = new Intent(getContext(), TicketDetalles.class);
                 startActivity(intent1);
             }
         });

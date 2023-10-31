@@ -24,17 +24,197 @@
 
                 <TextView
                     style="@style/detallesTicket"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Tecnología:"
+                    android:text="Titulo:"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/lblTitulo"
                     style="@style/detallesTicket"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Tecnología:" />
+                    android:text="Titulo" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Tipo de Incidencia:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblTipoIncidencia"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="TipoIncidencia" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Gravedad de Incidencia:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblGravedadIncidencia"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="GravedadIncidencia" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Estado del Ticket:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblEstadoTicket"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="EstadoTicket" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Nombre Responsable:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblNombreResponsable"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="NombreResponsable" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="Equipo Responsable:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblEquipoResponsable"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="EquipoResponsable" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Version del software:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblVersionSoftware"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="VersionSoftware" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Descripcion:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblDescripcion"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Descripcion" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Archivado:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblId_Archivado"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Id_Archivado" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/detallesTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Fecha y Hora de Creacion:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblFechaHoraCreacion"
+                    style="@style/detallesTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Fecha/Hora de Creacion" />
+            </LinearLayout>
+
+
+
+
+
+
+
 
         </LinearLayout>
     </ScrollView>
@@ -76,7 +256,7 @@
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
             android:backgroundTint="#2C2C2C"
-            android:text="Archivar Ticket" />
+            android:text="Abrir Ticket" />
     </LinearLayout>
 
 
